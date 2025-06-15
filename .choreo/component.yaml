@@ -1,6 +1,10 @@
-endpoints:
-  - name: default
-    port: 3000
-    type: REST
-    context: /
-    visibility: Public
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+spec:
+  inbound:
+    - name: NextJSApp
+      port: 3000
+      type: REST
+      networkVisibility: Public
+      context: /
+      schemaFilePath: openapi.yaml
